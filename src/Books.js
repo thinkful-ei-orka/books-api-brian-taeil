@@ -6,31 +6,15 @@ function Books(props) {
   let books = [];
 
   props.state.books.map((book) => {
-    let authors = '';
-    book.authors.map((author, i) => {
-      authors += author;
-      if (i < book.authors.length) {
-        authors += ', ';
-      }
-    });
-    let html = `
-      <div>
-        <h2>${book.title}</h2>
-        <div>
-          <img src="${book.imageLinks.thumbnail}" alt="${book.title} thumbnail" />
-          <div>
-            Authors:
-          </div>
-        </div>
-      </div>`;
+    
+    books.push (<Book book={book} key={book.id} />)
+    
   });
-  console.log(props);
+  console.log(books);
 
   return (
     <div>
-      These are books.
-      <Book />
-      <Book />
+      {books}
     </div>
   );
 }
