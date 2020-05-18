@@ -1,0 +1,32 @@
+
+
+.searchForm{
+    display: flex;
+    width: 100%;
+    background-color: rgb(145, 145, 145);
+    color: black;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterForm{
+    display: flex;
+    width: 100%;
+    background-color: rgb(201, 199, 199);
+    color: black;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    margin-right: 5px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+button{
+    border-radius: 5px;
+    margin-left: 5px;
+}

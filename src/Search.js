@@ -15,12 +15,12 @@ function Search(props) {
 
   return (
     <form id="searchForm" onSubmit={handleSearch}>
-      <div>
+      <div className='searchForm'>
         <label htmlFor="search">Search:</label>
         <input type="text" id="search" name="search" placeholder="Enter book title"></input>
         <button type="submit">Search</button>
       </div>
-      <div>
+      <div className='filterForm'>
         <label htmlFor="printType">Print Type:</label>
         <select id="printType" name="printType" onChange={handleSearch}>
           <option value="all">all</option>

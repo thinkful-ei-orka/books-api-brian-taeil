@@ -26,9 +26,11 @@ function Book(props) {
  return (
     <div>
       <h2>{props.book.title}</h2>
-      <div>
-        <img src={props.book.imageLinks.thumbnail} alt={imgAlt} />
+      <div className='bookParagraphs'>
         <div>
+          <img src={props.book.imageLinks.thumbnail} alt={imgAlt} />
+        </div>
+        <div className='bookParagrph'>
           <p>{authors}</p>
           <p>Price: {priceTag}</p>
           <p>{props.book.description}</p>
