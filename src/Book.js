@@ -14,7 +14,7 @@ function Book(props) {
       }
     });
   }
-console.log(props.book)
+  // console.log(props.book)
   let imgAlt = `${props.book.title} thumbnail`
   let priceTag = ''
   if (!props.book.listPrice){

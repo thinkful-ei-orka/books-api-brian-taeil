@@ -7,7 +7,15 @@ class App extends React.Component {
   state = { books: [] };
 
   runSearch = (search, printType, bookType) => {
-    let url = `https://www.googleapis.com/books/v1/volumes?q={${search}}&filterType={${bookType}}&printType=${printType}&maxResults=20`;
+    let filterString;
+
+    if (!bookType) {
+      filterString = '';
+    } else {
+      filterString = `&filter=${bookType}`;
+    }
+
+    let url = `https://www.googleapis.com/books/v1/volumes?q={${search}}${filterString}&printType=${printType}&maxResults=20`;
 
     fetch(url)
       .then(res => res.json())
@@ -17,6 +25,7 @@ class App extends React.Component {
   }
 
   saveData = (data) => {
+    console.log(data);
     let books = [];
     data.items.map((book) => {
       let stateBook = {

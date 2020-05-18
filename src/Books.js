@@ -6,11 +6,11 @@ function Books(props) {
   let books = [];
 
   props.state.books.map((book) => {
-    
+
     books.push (<Book book={book} key={book.id} />)
-    
+
   });
-  console.log(books);
+  // console.log(books);
 
   return (
     <div>
