@@ -25,9 +25,8 @@ class App extends React.Component {
   }
 
   saveData = (data) => {
-    console.log(data);
     let books = [];
-    data.items.map((book) => {
+    data.items.forEach((book) => {
       let stateBook = {
         id: book.id,
         title: book.volumeInfo.title,

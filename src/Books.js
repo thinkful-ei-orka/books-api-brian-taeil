@@ -3,14 +3,8 @@ import './Books.css';
 import Book from './Book';
 
 function Books(props) {
-  let books = [];
-
-  props.state.books.map((book) => {
-
-    books.push (<Book book={book} key={book.id} />)
-
-  });
-  // console.log(books);
+  
+  let books = props.state.books.map((book) => <Book book={book} key={book.id} />)
 
   return (
     <div>

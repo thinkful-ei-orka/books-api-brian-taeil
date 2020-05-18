@@ -7,14 +7,14 @@ function Book(props) {
 
   } else {
     authors = 'Authors: '
-    props.book.authors.map((author, i) => {
+    props.book.authors.forEach((author, i) => {
       authors += author;
       if (i < props.book.authors.length) {
         authors += ', ';
       }
     });
   }
-  // console.log(props.book)
+
   let imgAlt = `${props.book.title} thumbnail`
   let priceTag = ''
   if (!props.book.listPrice){
