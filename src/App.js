@@ -4,17 +4,42 @@ import Search from './Search';
 import Books from './Books';
 
 class App extends React.Component {
+  state = { books: [] };
 
-  runSearch() {
-    console.log('running');
+  runSearch = (search, printType, bookType) => {
+    let url = `https://www.googleapis.com/books/v1/volumes?q={${search}}&filterType={${bookType}}&printType=${printType}&maxResults=20`;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        this.saveData(data);
+      });
+  }
+
+  saveData = (data) => {
+    let books = [];
+    data.items.map((book) => {
+      let stateBook = {
+        id: book.id,
+        title: book.volumeInfo.title,
+        imageLinks: book.volumeInfo.imageLinks,
+        authors: book.volumeInfo.authors,
+        listPrice: book.saleInfo.listPrice,
+        description: book.volumeInfo.description
+      }
+      books.push(stateBook)
+    });
+    this.setState({
+      books: books
+    });
   }
 
   render() {
     return (
       <main className='App'>
         <Header />
-        <Search />
-        <Books />
+        <Search runSearch={this.runSearch} />
+        <Books state={this.state} />
       </main>
     );
   }
