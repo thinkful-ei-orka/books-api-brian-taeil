@@ -3,9 +3,9 @@ import './Header.css';
 
 function Header() {
   return (
-    <div>
-      This is the header
-    </div>
+    <header>
+      <h1>Google Book Search</h1>
+    </header>
   );
 }
 
